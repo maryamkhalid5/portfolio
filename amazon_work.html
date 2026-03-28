@@ -192,7 +192,7 @@ footer a:hover { color: #EDE8DF; }
 
 <!-- HERO -->
 <div class="hero">
-  <h1>LLM-as-a-Judge &amp; Data Quality Systems</h1>
+  <h1>Automated Data Quality Systems for Foundation Models</h1>
 </div>
 
 <!-- ═══════════════════ IMPACT AT A GLANCE ═══════════════════ -->
@@ -225,7 +225,7 @@ footer a:hover { color: #EDE8DF; }
 <section class="alt">
   <div class="container">
     <h2 class="section-title">What I Do</h2>
-    <p class="section-subtitle">My work sits at the intersection of three tightly coupled capabilities &mdash; each one amplifies the others to create a complete data quality system.</p>
+    <p class="section-subtitle">My work sits at the intersection of three tightly coupled capabilities; each one amplifies the others to create a complete data quality system.</p>
 
     <!-- PILLAR 1 -->
     <div class="pillar-header">
@@ -233,39 +233,227 @@ footer a:hover { color: #EDE8DF; }
       <h3 class="pillar-title">Build LLM-as-a-Judge Systems</h3>
     </div>
     <p class="pillar-desc">
-      I design and deploy automated quality judges that use large language and vision models to evaluate human annotations at 100% coverage &mdash; replacing the traditional 5&ndash;10% manual sample audit. Each judge is tailored to the modality (text, image, video, audio, cross-modal) while following a shared modular architecture I created: <strong>preprocessing &rarr; automeasure &rarr; postprocessing</strong>. The crown jewel is the <strong>DiME framework</strong> (Dual-Intelligence Mixture-of-Experts), a novel multi-expert, multi-model fusion approach that separates error detection from quality assessment, achieving 82% accuracy vs. a 50% baseline and enabling 37,000+ additional units through reuse across 5 workflows.
+      I design and deploy automated quality judges that use large language and vision models to evaluate human annotations at 100% coverage, replacing the traditional 5&ndash;10% manual sample audit. Each judge is tailored to the modality (text, image, video, audio, cross-modal) while following a shared modular architecture which is then deployed in production. <br>
+      I developed <strong>DiME framework</strong> (Dual-Intelligence Mixture-of-Experts), a novel multi-expert, multi-model fusion approach that separates error detection from quality assessment, achieving 82% accuracy vs. a 50% baseline and enabling 50,000+ additional units through reuse across 5 workflows.
     </p>
     <div class="card-grid-3" style="margin-bottom:48px;">
       <div class="card">
-        <h3>Text Preference</h3>
-        <p>Pairwise ranking judges for multi-turn conversations using dual-prompt architecture with dimensional priority analysis. Deployed across RAI, general domain, and 3P surge workflows.</p>
+        <h3>General Text Preference (RLHF)</h3>
+        <p>Pairwise ranking judges for multi-turn conversations using dual-prompt architecture with dimensional priority analysis. Deployed across general domain, and 3P surge workflows.</p>
         <span class="tag">82% accuracy</span><span class="tag">88% precision</span><span class="tag">97% recall</span>
+        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+  <p style="margin-bottom: 8px; font-size: 0.9em;"><strong>Work Samples:</strong></p>
+  <ul style="list-style: none; padding-left: 0; margin: 0; font-size: 0.85em;">
+    <li style="margin-bottom: 5px;">
+      <strong>LMSYS Static (CPM-14437):</strong>
+      <a href="w.amazon.com/bin/view/AGI-Data-Services/Quality/Science/GeneralDomainText/"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        Wiki
+      </a> |
+      <a href="code.amazon.com/packages/Agids-science-quality-filtering/trees/mainline/--/src/agids_science_quality_filtering/LYMSYS_Text_Preference_CPM14437/Version_1/"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        Code Repo
+      </a>
+    </li>
+    <li style="margin-bottom: 5px;">
+      <strong>1P Interactive Preference - General (DCR-211):</strong>
+      <a href="code.amazon.com/packages/Agids-science-quality-filtering/trees/mainline/--/src/agids_science_quality_filtering/DCR211_1P_Interactive_Preferecen_General/"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        Code Repo
+      </a> |
+      <a href="code.amazon.com/reviews/CR-258133524"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        CR-258133524
+      </a>
+    </li>
+    <li style="margin-bottom: 5px;">
+      <strong>Olympus MiL V3 (DCR-183):</strong>
+      <a href="quip-amazon.com/EiABAmSh4bbo/LLMaaJ-development-for-DCR-183-Olympus-MiL-Response-Rating-V3"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        Quality Report
+      </a> |
+      <a href="code.amazon.com/packages/Agids-science-quality-filtering/trees/mainline/--/src/agids_science_quality_filtering/DCR-183-Olympus%20MiL%20Response%20Rating%20V3/"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        Code Repo
+      </a> |
+      <a href="code.amazon.com/reviews/CR-256882123"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        CR-256882123
+      </a> |
+      <a href="code.amazon.com/reviews/CR-260555543"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        CR-260555543 (Prod)
+      </a>
+    </li>
+  </ul>
+</div>
+
       </div>
+      <!-- RAI Interactive Preference Text Panel -->
+<div class="workflow-panel" style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 20px; background-color: #ffffff;">
+  <h3 style="color: #232f3e; margin-top: 0;">RAI Interactive Preference - Policy-Aligned Quality Assessment</h3>
+
+  <p style="line-height: 1.6; color: #545b64;">
+    Built an LLM-as-a-Judge autofiltering system for RAI text preference data that evaluates response appropriateness (1-7 scale) based on 3-H tenets (Harmlessness, Honesty, Helpfulness) and sensitive content policies. The multi-stage filtering pipeline assesses preference correctness, validates rewrites, and checks policy compliance with severity-ranked error codes (1-10 scale).
+  </p>
+
+  <p style="line-height: 1.6; color: #545b64;"><strong>Key Contributions:</strong></p>
+  <ul style="line-height: 1.8; color: #545b64;">
+    <li>Designed multi-stage autofiltering pipeline with LLM-judge for appropriateness scoring and policy compliance checking</li>
+    <li>Achieved cross-functional alignment with AGI-F customer scientists, policy teams, and quality specialists on error categorization and filtering logic</li>
+    <li>Established standardized error code framework with severity rankings aligned with sensitive content policy</li>
+    <li>Delivered quality improvements through automated filtering while accommodating customer requirements for tie scenarios</li>
+  </ul>
+
+  <div style="margin-top: 15px; padding: 10px; background-color: #f7f9fa; border-radius: 4px;">
+    <strong style="color: #232f3e;">Metrics:</strong>
+    <span style="color: #545b64;">High-quality data filtering with evaluation covering 75%+ of Q1 audited data</span>
+  </div>
+
+  <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+    <p style="margin-bottom: 8px; font-size: 0.9em;"><strong>📄 Work Sample:</strong></p>
+    <ul style="list-style: none; padding-left: 0; margin: 0; font-size: 0.85em;">
+      <li style="margin-bottom: 5px;">
+        <strong>RAI Interactive Preference (CPM-13576):</strong>
+        <a href="w.amazon.com/bin/view/AGI-Data-Services/Quality/Science/RAI2/"
+           target="_blank"
+           style="color: #0066c0; text-decoration: none;">
+          Wiki
+        </a> |
+        <a href="code.amazon.com/packages/Agids-science-quality-filtering/trees/mainline/--/src/agids_science_quality_filtering/RAI_Text_Preference_CPM13576/"
+           target="_blank"
+           style="color: #0066c0; text-decoration: none;">
+          Code Repo
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
       <div class="card">
-        <h3>Cross-Modal (Video + Audio)</h3>
+        <h3>Cross-Modal (Text + Video + Audio)</h3>
         <p>Invented a hierarchical multi-stage reasoning pipeline with explicit modality separation: audio understanding &rarr; visual understanding &rarr; cross-modal integration &rarr; classification. Doubled accuracy vs. single-pass baseline.</p>
         <span class="tag">100K units</span><span class="tag">99% precision</span><span class="tag green">&lt;1 week SLA</span>
+        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+  <p style="margin-bottom: 8px; font-size: 0.9em;"><strong>Work Sample:</strong></p>
+  <ul style="list-style: none; padding-left: 0; margin: 0; font-size: 0.85em;">
+    <li style="margin-bottom: 5px;">
+      <strong>Cross-modal QA (CPM-15865):</strong>
+      <a href="quip-amazon.com/AQryA7CLiRWK/Quality-Report-CPM-15865-Cross-modal-Question-Answering-1P-Oct-31-Nov3rd"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        Quality Report
+      </a> |
+      <a href="code.amazon.com/packages/Agids-science-quality-filtering/trees/mainline/--/src/agids_science_quality_filtering/CPM-15865-Cross-modal%20Question%20Answering/Version_1/"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        Code Repo
+      </a>
+    </li>
+  </ul>
+</div>
+
       </div>
       <div class="card">
         <h3>Speech &amp; Audio</h3>
         <p>Captioning verification and binary speech preference judges deployed to production with sustained 90&ndash;100% weekly precision.</p>
         <span class="tag">89K+ speech captioning</span><span class="tag">17K+ binary speech</span>
+        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+  <p style="margin-bottom: 8px; font-size: 0.9em;"><strong>📄 Work Sample:</strong></p>
+  <ul style="list-style: none; padding-left: 0; margin: 0; font-size: 0.85em;">
+    <li style="margin-bottom: 5px;">
+      <strong>Speech Captioning V2 (CPM-14878):</strong>
+      <a href="w.amazon.com/bin/view/AGI-Data-Services/Quality/Science/Speech#HSpeechCaptioningVerificationLS28CPM-1487829"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        Wiki
+      </a> |
+      <a href="code.amazon.com/packages/Agids-science-quality-filtering/trees/mainline/--/src/agids_science_quality_filtering/CPM_14878_Speech_Captioning_V2_LS/Version_1_Shadow_mode/"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        Code Repo
+      </a>
+    </li>
+  </ul>
+</div>
+
       </div>
       <div class="card">
         <h3>Image Quality</h3>
         <p>7-dimension evaluation for character consistency editing (identity preservation, artifacts, instruction following) using vision-language models. Disagreement-based annotation assessment across ~100K items.</p>
         <span class="tag">Qwen VL</span><span class="tag">7 dimensions</span>
+        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+  <p style="margin-bottom: 8px; font-size: 0.9em;"><strong>📄 Work Sample:</strong></p>
+  <ul style="list-style: none; padding-left: 0; margin: 0; font-size: 0.85em;">
+    <li style="margin-bottom: 5px;">
+      <strong>HIL Character Consistency Editing (DCR-984):</strong>
+      <a href="quip-amazon.com/evg5AeBLpeg7/LLMaJ-Development-DCR-984-HIL-Editing-Character-Consistency-Filtering"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        Quality Report
+      </a>|
+      <a href="code.amazon.com/reviews/CR-260573298/revisions/2"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        CR-260573298
+      </a>
+    </li>
+  </ul>
+</div>
+
       </div>
       <div class="card">
-        <h3>OCR / Receipt Extraction</h3>
+        <h3>Financial Document Text Extraction</h3>
         <p>Vision-language judge for image-to-text extraction quality assessment on receipt data using Qwen 3-VL.</p>
-        <span class="tag">82% HQ precision</span><span class="tag">Pilot</span>
+        <span class="tag">82% HQ precision</span><span class="tag">Production</span>
+        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+  <p style="margin-bottom: 8px; font-size: 0.9em;"><strong>📄 Work Sample:</strong></p>
+  <ul style="list-style: none; padding-left: 0; margin: 0; font-size: 0.85em;">
+    <li style="margin-bottom: 5px;">
+      <strong>Text Extraction Prefilled (CPM-17167):</strong>
+      <a href="code.amazon.com/packages/Agids-science-quality-filtering/trees/mainline/--/src/agids_science_quality_filtering/CPM_17167_TextExtractionPrefilled/"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        Code Repo
+      </a> |
+      <a href="code.amazon.com/reviews/CR-250659969/revisions/6"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        CR-250659969
+      </a>
+    </li>
+  </ul>
+</div>
+
       </div>
       <div class="card">
-        <h3>RAI Policy Compliance (WIP)</h3>
-        <p>Building <strong>RAIdar</strong> &mdash; an LLM-based sensitive content classifier targeting high recall for sample-level RAI policy detection. Early results show 96% recall; exploring safe routing to recover ~486 hours/week of idle annotator capacity.</p>
+        <h3>Automated Safety Screening and Annotator Capacity Recovery (WIP)</h3>
+        <p>Building RAIdar, an LLM-based sensitive content classifier targeting high recall for sample-level RAI policy detection. Developed a hierarchical category-first architecture that identifies applicable policy categories from Amazon's 40-category framework, then determines overall content sensitivity. Achieved breakthrough performance by overcoming the "Policy Paradox" where adding comprehensive policy guidance decreased other models' performance by 50%.</p>
         <span class="tag orange">WIP</span><span class="tag orange">96% recall (prelim.)</span><span class="tag orange">~486 hrs/wk target</span>
+        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+  <p style="margin-bottom: 8px; font-size: 0.9em;"><strong>📄 Work Sample:</strong></p>
+  <ul style="list-style: none; padding-left: 0; margin: 0; font-size: 0.85em;">
+    <li style="margin-bottom: 5px;">
+      <strong>Sensitive Content Detection (Pilot):</strong>
+      <a href="quip-amazon.com/UB4EA2vifr8W/LLM-based-Sensitive-Content-Detection-Pilot-study"
+         target="_blank"
+         style="color: #0066c0; text-decoration: none;">
+        Pilot Study Report
+      </a>
+    </li>
+  </ul>
+</div>
+
       </div>
+      
     </div>
 
     <!-- PILLAR 2 -->
@@ -281,12 +469,13 @@ footer a:hover { color: #EDE8DF; }
       <div class="card">
         <h3>Error Taxonomy Design</h3>
         <p>Created a standardized error taxonomy with severity scoring. with severity levels to ensure consistency in auditing process and provide objective feedback to human annotators.</p>
-        <span class="tag">Adopted org-wide</span>,<a href="https://w.amazon.com/bin/view/AGI-Data-Services/Quality/Science/ErrorCategorization/Error%20Categorization%20for%20Nova%20Workflows#HRAITextDemonstration" target="_blank">Wiki r&arr;</a>
+        <span class="tag">Adopted org-wide</span> <a href="https://w.amazon.com/bin/view/AGI-Data-Services/Quality/Science/ErrorCategorization/Error%20Categorization%20for%20Nova%20Workflows#HRAITextDemonstration" target="_blank">More details in this Wiki</a>
       </div>
       <div class="card">
         <h3>Quality Definition &amp; Customer Alignment</h3>
-        <p>Conducted detailed spot-checks, identified ambiguities in annotation guidelines, drove multiple customer clarification sessions to establish objective ground-truth definitions. Separated <strong>objective errors</strong> (hallucinations, factual errors, safety violations) from <strong>subjective errors</strong> (style, wording preferences) to ensure fair assessment.</p>
-        <span class="tag">Cross-functional</span><span class="tag">Policy alignment</span>
+        <p>Conducted detailed spot-checks, identified ambiguities in annotation guidelines, drove multiple customer clarification sessions to establish objective ground-truth definitions. Separated <strong>objective errors</strong>  from <strong>subjective errors</strong> to ensure fair assessment.</p>
+        <span class="tag">Cross-functional</span><span class="tag">Policy alignment</span> 
+        <a href="https://w.amazon.com/bin/view/AGI-Data-Services/Quality/Science/RAI2#HAlignment2FCommunicationwithStakeholders" target="_blank">More details in this Wiki</a>
       </div>
     </div>
 
