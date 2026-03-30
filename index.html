@@ -283,6 +283,31 @@
   }
   .pub-btn:hover { background: var(--llm-light); border-color: var(--llm); }
 
+  /* BLOG & PROJECTS */
+  .blog-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 22px 26px; margin-bottom: 12px; display: flex; justify-content: space-between;
+    align-items: flex-start; gap: 18px; transition: box-shadow 0.2s, transform 0.2s;
+    border-left: 3px solid var(--llm);
+  }
+  .blog-card:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+  .blog-tag {
+    display: inline-block; font-size: 10px; font-weight: 500; padding: 2px 10px;
+    border-radius: 20px; background: var(--llm-light); color: var(--llm); margin-right: 6px; margin-top: 6px;
+  }
+  .blog-tag.gh { background: #f0fdf4; color: #166534; }
+  .blog-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .blog-desc { font-size: 12px; color: var(--text-secondary); font-weight: 300; line-height: 1.5; margin-top: 6px; }
+  .blog-meta { font-size: 11px; color: var(--text-tertiary); font-weight: 300; }
+  .blog-links { display: flex; gap: 8px; flex-shrink: 0; align-self: center; }
+  .blog-links a {
+    font-size: 11px; padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border);
+    color: var(--llm); text-decoration: none; font-weight: 500; transition: all 0.15s; white-space: nowrap;
+  }
+  .blog-links a:hover { background: var(--llm-light); border-color: var(--llm); }
+  .blog-links a.gh-btn { color: #166534; }
+  .blog-links a.gh-btn:hover { background: #f0fdf4; border-color: #166534; }
+
   /* SKILLS */
   .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
   .sg {
@@ -374,6 +399,7 @@
     <a class="nav-link" href="#sensing">Sensing</a>
     <a class="nav-link" href="#production">Production</a>
     <a class="nav-link" href="#pubs">Papers</a>
+    <a class="nav-link" href="#blog">Blog &amp; Projects</a>
     <a class="nav-link" href="#skills">Skills</a>
   </div>
   <div class="nav-ext">
@@ -676,6 +702,43 @@ with automated judges</div><div class="mc-where">>1 day SLA</div></div>
       <div class="q"><p>"Greatly improved efficiency of quality assessment process."</p><div class="attr">&mdash; Jiani Li, Sr. Applied Scientist, AGI Foundations</div></div>
       <div class="q"><p>"Raised the bar on what we expect from data pipelines."</p><div class="attr">&mdash; Fan Yang, Sr. Applied Scientist, AGI Foundations</div></div>
     </div>
+  </div>
+</div>
+
+<!-- ===== BLOG & PROJECTS ===== -->
+<div class="content-section" id="blog">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--llm);">Blog &amp; Side Projects</div>
+    <div class="section-title">Writing &amp; Open Source</div>
+    <div class="section-sub">Technical articles, tutorials, and side projects exploring AI, ML, and beyond.</div>
+
+    <div class="blog-card">
+      <div>
+        <div class="blog-title">Agentic AI Explained: A No-Jargon Guide for Beginners</div>
+        <div class="blog-meta">Medium &middot; March 2026</div>
+        <div class="blog-desc">A beginner-friendly walkthrough of agentic AI&mdash;what it is, how it differs from traditional AI, and why it matters. Covers core concepts like autonomy, tool use, planning, and memory with clear examples and zero jargon.</div>
+        <span class="blog-tag">Agentic AI</span><span class="blog-tag">Explainer</span><span class="blog-tag">LLMs</span>
+      </div>
+      <div class="blog-links">
+        <a href="https://medium.com/@maryam.kd79/agentic-ai-explained-a-no-jargon-guide-for-beginners-7615823ed741" target="_blank">Read on Medium</a>
+      </div>
+    </div>
+
+    <!-- Add more articles/projects here using the same blog-card format -->
+    <!--
+    <div class="blog-card" style="border-left-color: #166534;">
+      <div>
+        <div class="blog-title">Project Name</div>
+        <div class="blog-meta">GitHub &middot; 2026</div>
+        <div class="blog-desc">Description of the project.</div>
+        <span class="blog-tag gh">Python</span><span class="blog-tag gh">Open Source</span>
+      </div>
+      <div class="blog-links">
+        <a class="gh-btn" href="#" target="_blank">GitHub</a>
+      </div>
+    </div>
+    -->
+
   </div>
 </div>
 
